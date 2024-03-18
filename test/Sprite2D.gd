@@ -1,25 +1,31 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 # Define movement speed
-var speed = 200
+const MAX_SPEED = 600
+const accel = 1500
+const friction = 600
+
+var input = Vector2.ZERO
 
 func _physics_process(delta):
-	# Define movement vector
-	var movement = Vector2()
+	player_movement(delta)
 
-	# Detect input and set movement vector accordingly
-	if Input.is_action_pressed("move_right"):
-		movement.x += 1
-	if Input.is_action_pressed("move_left"):
-		movement.x -= 1
-	if Input.is_action_pressed("move_down"):
-		movement.y += 1
-	if Input.is_action_pressed("move_up"):
-		movement.y -= 1
+func get_input():
+	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+	input.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	return input.normalized()
 
-	# Normalize diagonal movement to prevent moving faster
-	# when moving diagonally
-	movement = movement.normalized()
-
-	# Move the player
-	move_and_slide(movement * speed)
+func player_movement(delta):
+	input = get_input()
+	if input == Vector2.ZERO:
+		if velocity.length() > (friction * delta):
+			velocity -= velocity.normalized() * (friction * delta)
+		else:
+			velocity = Vector2.ZERO
+	else:
+		velocity += (input * accel * delta)
+		velocity = velocity.limit_length(MAX_SPEED)
+		
+		
+	move_and_slide()
+	

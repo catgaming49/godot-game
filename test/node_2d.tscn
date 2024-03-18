@@ -1,19 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://evwth433svb0"]
+[gd_scene load_steps=5 format=3 uid="uid://evwth433svb0"]
 
 [ext_resource type="Script" path="res://Sprite2D.gd" id="1_j0lcc"]
+[ext_resource type="Texture2D" uid="uid://c32b4ghr80hmh" path="res://icon.svg" id="2_satya"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_12iph"]
+radius = 0.187703
+height = 0.780265
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gxrlt"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_wsoaj"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 322)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_gxrlt")
-position = Vector2(454, 210)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(399.637, 485.743)
 scale = Vector2(247, 198.814)
-texture = SubResource("CanvasTexture_wsoaj")
 script = ExtResource("1_j0lcc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_12iph")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+material = SubResource("CanvasItemMaterial_gxrlt")
+position = Vector2(0.00349276, 0.018899)
+scale = Vector2(0.00306807, -0.00624799)
+texture = ExtResource("2_satya")
+flip_v = true
