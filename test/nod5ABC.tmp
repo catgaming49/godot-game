@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://evwth433svb0"]
+[gd_scene load_steps=6 format=3 uid="uid://evwth433svb0"]
 
 [ext_resource type="Script" path="res://Sprite2D.gd" id="1_j0lcc"]
 [ext_resource type="Script" path="res://rotate_player.gd" id="2_q3jth"]
 [ext_resource type="Texture2D" uid="uid://crbqo8ipyb61k" path="res://player sprite.png" id="3_pdfxx"]
-[ext_resource type="Script" path="res://changeSprite.gd" id="4_7bru8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi1h7"]
 size = Vector2(0.37247, 0.794712)
@@ -36,4 +35,3 @@ position = Vector2(-5.96046e-08, -0.00502977)
 rotation = 1.57809
 scale = Vector2(0.00389598, -0.00334099)
 texture = ExtResource("3_pdfxx")
-script = ExtResource("4_7bru8")
