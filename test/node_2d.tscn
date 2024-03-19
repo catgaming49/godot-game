@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Sprite2D.gd" id="1_j0lcc"]
 [ext_resource type="Script" path="res://rotate_player.gd" id="2_q3jth"]
-[ext_resource type="Texture2D" uid="uid://c32b4ghr80hmh" path="res://icon.svg" id="2_satya"]
+[ext_resource type="Texture2D" uid="uid://crbqo8ipyb61k" path="res://player sprite.png" id="3_pdfxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi1h7"]
-size = Vector2(0.388664, 0.495438)
+size = Vector2(0.631579, 0.422506)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gxrlt"]
 
@@ -20,7 +20,7 @@ scale = Vector2(247, 198.814)
 script = ExtResource("1_j0lcc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.00146985, 3.50475e-05)
+position = Vector2(0.00146997, -0.00876689)
 shape = SubResource("RectangleShape2D_wi1h7")
 
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
@@ -28,8 +28,9 @@ position = Vector2(0.00551824, -0.00373722)
 script = ExtResource("2_q3jth")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Marker2D"]
+texture_filter = 4
+texture_repeat = 1
 material = SubResource("CanvasItemMaterial_gxrlt")
 position = Vector2(-0.00404864, 7.45058e-08)
 scale = Vector2(0.00306807, -0.00385098)
-texture = ExtResource("2_satya")
-flip_v = true
+texture = ExtResource("3_pdfxx")
