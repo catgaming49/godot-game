@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://evwth433svb0"]
+[gd_scene load_steps=6 format=3 uid="uid://evwth433svb0"]
 
 [ext_resource type="Script" path="res://Sprite2D.gd" id="1_j0lcc"]
+[ext_resource type="Script" path="res://rotate_player.gd" id="2_q3jth"]
 [ext_resource type="Texture2D" uid="uid://c32b4ghr80hmh" path="res://icon.svg" id="2_satya"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_12iph"]
-radius = 0.187703
-height = 0.780265
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi1h7"]
+size = Vector2(0.388664, 0.495438)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gxrlt"]
 
@@ -20,11 +20,16 @@ scale = Vector2(247, 198.814)
 script = ExtResource("1_j0lcc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CapsuleShape2D_12iph")
+position = Vector2(0.00146985, 3.50475e-05)
+shape = SubResource("RectangleShape2D_wi1h7")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(0.00551824, -0.00373722)
+script = ExtResource("2_q3jth")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Marker2D"]
 material = SubResource("CanvasItemMaterial_gxrlt")
-position = Vector2(0.00349276, 0.018899)
-scale = Vector2(0.00306807, -0.00624799)
+position = Vector2(-0.00404864, 7.45058e-08)
+scale = Vector2(0.00306807, -0.00385098)
 texture = ExtResource("2_satya")
 flip_v = true

@@ -3,7 +3,7 @@ extends CharacterBody2D
 # Define movement speed
 const MAX_SPEED = 600
 const accel = 1500
-const friction = 600
+const friction = 1000
 
 var input = Vector2.ZERO
 
