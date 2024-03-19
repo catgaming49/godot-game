@@ -10,6 +10,6 @@ func _process(_delta):
 
 func change_sprite():
 	if player_weapon_count == 1:
-		texture = load("res://player with gun.png")
+		texture = load("res://Player/player with gun.png")
 		player_weapon_count = 0
 
