@@ -18,6 +18,7 @@ Bullet = ExtResource("2_i8dhp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 322)
+scale = Vector2(1.5173, 4.5366)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(399.637, 485.743)
