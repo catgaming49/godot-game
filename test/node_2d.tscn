@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://evwth433svb0"]
+[gd_scene load_steps=9 format=3 uid="uid://evwth433svb0"]
 
+[ext_resource type="Script" path="res://Player.gd" id="1_7cs6q"]
 [ext_resource type="Script" path="res://Player/Sprite2D.gd" id="1_j0lcc"]
+[ext_resource type="PackedScene" uid="uid://d3ynsvdeu1yan" path="res://Bullet.tscn" id="2_i8dhp"]
 [ext_resource type="Script" path="res://Player/rotate_player.gd" id="2_q3jth"]
 [ext_resource type="Texture2D" uid="uid://crbqo8ipyb61k" path="res://Player/player sprite.png" id="3_pdfxx"]
 [ext_resource type="Script" path="res://Player/changeSprite.gd" id="4_7bru8"]
@@ -10,7 +12,9 @@ size = Vector2(0.37247, 0.794712)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gxrlt"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Player" type="Node2D"]
+script = ExtResource("1_7cs6q")
+Bullet = ExtResource("2_i8dhp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 322)
