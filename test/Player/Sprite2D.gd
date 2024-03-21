@@ -8,7 +8,7 @@ const friction = 1000
 var input = Vector2.ZERO
 
 func _process(delta):
-	print("Vect[325]: ", Vector2(cos(rotation), -sin(rotation)) * 1)
+	pass
 
 func _physics_process(delta):
 	player_movement(delta)

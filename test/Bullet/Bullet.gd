@@ -6,10 +6,6 @@ var timer = Timer.new()
 
 func _ready():
 	self.add_child(timer)
-	print("Ne bullet spawned", position)
-	print($Sprite2D.transform)
-	#var velocity = Vector2(cos(rotation), -sin(rotation)) * 1
-	#print(velocity)
 	show()
 	timer.connect("timeout", queue_free)
 	timer.set_wait_time(2)
