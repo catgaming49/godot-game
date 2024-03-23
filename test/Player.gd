@@ -1,6 +1,7 @@
 extends Node2D
 
-var weapon_cooldown = 1
+var weapon_cooldown_max = 1
+var weapon_cooldown = 0
 
 @export var Bullet : PackedScene
 
@@ -19,6 +20,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("use_weapon"):
+	if Input.is_action_pressed("use_weapon") and weapon_cooldown <= 0:
+		weapon_cooldown = 1
 		shoot()
+	if weapon_cooldown > 0:
+		weapon_cooldown -= delta
+		print(weapon_cooldown)
 		

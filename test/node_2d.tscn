@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7cs6q"]
 [ext_resource type="Script" path="res://Player/Sprite2D.gd" id="1_j0lcc"]
-[ext_resource type="PackedScene" path="res://Bullet.tscn" id="2_i8dhp"]
+[ext_resource type="PackedScene" uid="uid://d3ynsvdeu1yan" path="res://Bullet.tscn" id="2_i8dhp"]
 [ext_resource type="Script" path="res://Player/rotate_player.gd" id="2_q3jth"]
 [ext_resource type="Script" path="res://Player/changeSprite.gd" id="4_7bru8"]
 [ext_resource type="Texture2D" uid="uid://dm6j8qqe1nylk" path="res://Player/player sprite.png" id="5_lhr68"]
