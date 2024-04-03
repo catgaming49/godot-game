@@ -43,3 +43,5 @@ scale = Vector2(0.00211351, -0.00196936)
 texture = ExtResource("5_lhr68")
 flip_v = true
 script = ExtResource("4_7bru8")
+
+[connection signal="get_equipped" from="CharacterBody2D/Marker2D/Sprite2D" to="." method="_on_sprite_2d_get_equipped"]

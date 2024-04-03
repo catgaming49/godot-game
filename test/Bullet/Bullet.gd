@@ -1,31 +1,26 @@
 extends Area2D
 
-# Called when the node enters the scene tree for the first time.
-
 var timer = Timer.new()
-var speed = 200
-
+var speed = 1000
+var fired = false
+var direction = Vector2.ZERO
 
 func _ready():
 	self.add_child(timer)
 	show()
-	print(position, " a:a ", Vector2(position.x+1, position.y+1))
 	timer.connect("timeout", queue_free)
 	timer.set_wait_time(2)
 	timer.start()
 
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#position = Vector2(position.)
-	#print(position, " : ", Vector2(position.x+1, position.y+1) * delta)
-	#position = Vector2(position.x+1, position.y+1) * delta
 	pass
-
 
 func _physics_process(delta):
-	position = Vector2(position.x+1, position.y+1) #* delta
-	#position = position.rotated(rotation) * speed #* delta
-	pass
+	if not fired:
+		var mouse_position = get_global_mouse_position()
+		direction = (mouse_position - position).normalized()
+		var initial_rotation = direction.angle()
+		rotation = initial_rotation # Set initial rotation
+		fired = true
+	
+	position += direction * speed * delta

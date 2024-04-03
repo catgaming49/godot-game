@@ -1,16 +1,14 @@
 extends Node2D
-
 var weapon_cooldown_max = 1
 var weapon_cooldown = 0
+var pistol_equipped:bool = false
 
 @export var Bullet:PackedScene
 
 func shoot():
 	var b = Bullet.instantiate()
 	add_child(b)
-	#b.rotation = get_node("CharacterBody2D/Marker2D").rotation + 45
 	b.rotate(get_angle_to(get_global_mouse_position()))	
-	#b.rotation
 	b.position = $CharacterBody2D.position
 	b.visible = true
 
@@ -21,10 +19,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("use_weapon") and weapon_cooldown <= 0:
+	if Input.is_action_pressed("use_weapon") && weapon_cooldown <= 0 && pistol_equipped:
 		weapon_cooldown = 1
 		shoot()
 	if weapon_cooldown > 0:
 		weapon_cooldown -= delta
-		#print(weapon_cooldown)
 		
+
+
+
+func _on_sprite_2d_get_equipped(value:bool):
+	pistol_equipped = value # Replace with function body.
